@@ -35,10 +35,7 @@ public class AbstractComputerBuilder implements Builder{
     }
 
     @Override
-    public String toString(){
-        return "Computer {" +
-                "RAM: " + ramCapacity + "GB " + ramType + ", " +
-                "Hard Drive: " + hardDriveCapacity + "GB " + hardDriveType + ", " +
-                "Screen: " + screenDimension + "' " + screenQuality + "}";
+    public Computer getResult(){
+        return new Computer(ramType,ramCapacity,hardDriveType, hardDriveCapacity, screenDimension, screenQuality);
     }
 }
