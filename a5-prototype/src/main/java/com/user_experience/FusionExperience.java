@@ -13,7 +13,7 @@ public class FusionExperience extends UserExperiencePrototype {
         super(username, planType,
                 (menu != null) ? menu : getDefaultMenu(),
                 (offers != null) ? offers : getDefaultOffers(),
-                banners);
+                (banners != null) ? banners : getDefaultBanners());
         this.number = number;
         this.data = data;
     }
@@ -34,6 +34,12 @@ public class FusionExperience extends UserExperiencePrototype {
         defaultOffers.add("LaLiga for 1 month");
         defaultOffers.add("Unlimited data");
         return defaultOffers;
+    }
+
+    public static List getDefaultBanners(){
+        List<String> defaultBanners = new ArrayList<>();
+        defaultBanners.add("-- FUSION EXPERIENCE --");
+        return defaultBanners;
     }
 
     //Setters and Getters

@@ -11,7 +11,7 @@ public class FiberExperience extends UserExperiencePrototype{
         super(username, planType,
             (menu != null) ? menu : getDefaultMenu(), //If menu is not null -- initialize as menu (condition is true) | intialize as with content of DefaultMenu (condition false)
             (offers != null) ? offers : getDefaultOffers(),
-            banners);
+                (banners != null) ? banners : getDefaultBanners());
         this.speed = speed;
     }
 
@@ -29,6 +29,13 @@ public class FiberExperience extends UserExperiencePrototype{
         defaultOffers.add("Free router");
         return defaultOffers;
     }
+
+    public static List<String> getDefaultBanners(){
+        List<String> defaultBanners = new ArrayList<>();
+        defaultBanners.add("-- FIBER EXPERIENCE --");
+        return defaultBanners;
+    }
+
 
     public int getSpeed() {
         return speed;

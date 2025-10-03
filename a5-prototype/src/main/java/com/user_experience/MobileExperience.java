@@ -10,7 +10,7 @@ public class MobileExperience extends UserExperiencePrototype{
 
     public MobileExperience(int number, int data, String username, String planType, List<String> menu, List<String> offers, List<String> banners){
         super(username, planType, (menu != null) ? menu : getDefaultMenu(), (offers != null) ? offers : getDefaultOffers(),
-        banners);
+                (banners != null) ? banners : getDefaultBanners());
         this.number = number;
         this.data = data;
     }
@@ -30,6 +30,12 @@ public class MobileExperience extends UserExperiencePrototype{
         defaultOffers.add("Unlimited data");
         defaultOffers.add("Smartphone for 0€/month");
         return defaultOffers;
+    }
+
+    public void List getDefaultBanners(){
+        List<String> defaultBanners = new ArrayList<>();
+        defaultBanners.add("-- MOBILE EXPERIENCE --");
+        return defaultBanners;
     }
 
     public void setNumber(int number){

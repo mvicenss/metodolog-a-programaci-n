@@ -11,7 +11,8 @@ public class NewUserExperience extends UserExperiencePrototype{
     private LocalDate registrationDate;
 
     public NewUserExperience(String name, String email, LocalDate registrationDate, String username, String planType, List<String> menu, List<String> offers, List<String> banners) {
-        super(username, planType, (menu != null) ? menu : getDefaultMenu(), (offers != null) ? offers : getDefautlOffers(), banners);
+        super(username, planType, (menu != null) ? menu : getDefaultMenu(), (offers != null) ? offers : getDefautlOffers(),
+                (banners != null) ? banners : getDefaultBanners());
         this.name = name;
         this.email = email;
         this.registrationDate = registrationDate;
@@ -30,6 +31,12 @@ public class NewUserExperience extends UserExperiencePrototype{
         defaultOffers.add("3 Months of Netflix for free");
         defaultOffers.add("Free phone line");
         return defaultOffers;
+    }
+
+    public static List getDefaultBanners() {
+        List<String> defaulBanners = new ArrayList<>();
+        defaultBanners.add("-- NEW USER EXPERIENCE --");
+        return defaulBanners;
     }
 
     //Setters + Getters
