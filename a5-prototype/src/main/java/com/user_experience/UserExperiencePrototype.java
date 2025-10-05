@@ -1,4 +1,4 @@
-package src.main.java.com.user_experience;
+package com.user_experience;
 
 import java.util.List;
 
@@ -49,19 +49,19 @@ public abstract class UserExperiencePrototype implements Cloneable{
     //Method to show the banner
 
     //Setters
-    public void setUsername(){
+    public void setUsername(String username){
         this.username = username;
     }
-    public void setPlanType(){
+    public void setPlanType(String planType){
         this.planType = planType;
     }
-    public void setMenu(){
+    public void setMenu(List<String> menu){
         this.menu = menu;
     }
-    public void setOffers(){
+    public void setOffers(List<String> offers){
         this.offers = offers;
     }
-    public void setBanner(){
+    public void setBanner(List<String> banners){
         this.banners = banners;
     }
 

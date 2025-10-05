@@ -1,4 +1,4 @@
-package src.main.java.com.user_experience;
+package com.user_experience;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package src.main.java.com.user_experience;
+package com.user_experience;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class MobileExperience extends UserExperiencePrototype{
     }
 
     //Available options for MobileExperience
-    private static List getDefaultMenu(){
+    private static List<String> getDefaultMenu(){
         List<String> defaultMenu = new ArrayList<>();
         defaultMenu.add("Add minutes");
         defaultMenu.add("Add GB");
@@ -24,7 +24,7 @@ public class MobileExperience extends UserExperiencePrototype{
     }
 
     //Available offers for MobileExperience
-    private static List getDefaultOffers(){
+    private static List<String> getDefaultOffers(){
         List<String> defaultOffers = new ArrayList<>();
         defaultOffers.add("60 free minutes");
         defaultOffers.add("Unlimited data");

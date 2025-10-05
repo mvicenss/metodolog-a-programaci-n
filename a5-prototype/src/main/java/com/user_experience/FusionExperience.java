@@ -1,4 +1,4 @@
-package src.main.java.com.user_experience;
+package com.user_experience;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +16,10 @@ public class FusionExperience extends UserExperiencePrototype {
                 banners);
         this.number = number;
         this.data = data;
+        this.fiberSpeed = fiberSpeed;
     }
 
-    public static List getDefaultMenu(){
+    public static List<String> getDefaultMenu(){
         List<String> defaultMenu = new ArrayList<>();
         defaultMenu.add("Upgrade fiber plan");
         defaultMenu.add("Upgrade speed");
@@ -28,7 +29,7 @@ public class FusionExperience extends UserExperiencePrototype {
         return defaultMenu;
     }
 
-    public static List getDefaultOffers(){
+    public static List<String> getDefaultOffers(){
         List<String> defaultOffers = new ArrayList<>();
         defaultOffers.add("Free phone number");
         defaultOffers.add("LaLiga for 1 month");

@@ -1,4 +1,4 @@
-package src.main.java.com.user_experience;
+package com.user_experience;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +17,14 @@ public class NewUserExperience extends UserExperiencePrototype{
         this.registrationDate = registrationDate;
     }
 
-    public static List getDefaultMenu() {
+    public static List<String> getDefaultMenu() {
         List<String> defaultMenu = new ArrayList<>();
         defaultMenu.add("Call Customer Support");
         defaultMenu.add("Explore services");
         defaultMenu.add("Check plan");
         return defaultMenu;
     }
-    public static List getDefautlOffers() {
+    public static List<String> getDefautlOffers() {
         List<String> defaultOffers = new ArrayList<>();
         defaultOffers.add("One month of free LaLiga");
         defaultOffers.add("3 Months of Netflix for free");
