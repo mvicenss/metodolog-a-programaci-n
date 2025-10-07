@@ -1,12 +1,14 @@
-package com.user_experience;
+package src.main.java.com.user_experience;
 
 import java.time.LocalDate;
 import java.util.*;
+
 
 public class Main {
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
+        List <UserExperiencePrototype> personalizedClones = new ArrayList<>();
         ui.logo();
         ui.welcome();
         wait(3000);
@@ -63,6 +65,8 @@ public class Main {
             registry.addPrototype("fusion", fusionProto);
             registry.addPrototype("new", newUserProto);
 
+            registry.showPrototype();
+
         long t1 = System.nanoTime();
         ui.showTime("Prototype creation took", (t1 - t0) / 1_000_000);
 
@@ -92,6 +96,17 @@ public class Main {
             int option = ui.readOption(in);
             if (option == 0) break;
 
+            if (option == 5){
+                if(personalizedClones.isEmpty()){
+                    System.out.println("No personalized clones.");
+                }else{
+                    for(UserExperiencePrototype c : personalizedClones){
+                        ui.show(c);
+                    }
+                }
+                continue;
+            }
+
             String key = ui.keyFromOption(option);
             if (key.isEmpty()) {
                 System.out.println("Unknown option.");
@@ -109,6 +124,7 @@ public class Main {
                 continue;
             }
             ui.customize(clone, username, extraOffers, extraBanners);
+            personalizedClones.add(clone);
             long c1 = System.nanoTime();
             ui.showTime("Cloning + customization took", (c1 - c0) / 1_000_000);
 

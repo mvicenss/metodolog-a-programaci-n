@@ -1,4 +1,4 @@
-package com.user_experience;
+package src.main.java.com.user_experience;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,5 +27,12 @@ public class PrototypeRegistry {
                 return null; 
             }
         }        
+    }
+
+    public void showPrototype(){
+        System.out.println("Prototypes in registry:");
+        for(UserExperiencePrototype proto: prototypes.values()){
+            ui.show(proto);
+        }
     }
 }

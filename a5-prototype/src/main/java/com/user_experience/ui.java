@@ -1,4 +1,4 @@
-package com.user_experience;
+package src.main.java.com.user_experience;
 
 import java.util.*;
 
@@ -66,6 +66,7 @@ public class ui {
         System.out.println("  (2) Mobile");
         System.out.println("  (3) Fusion");
         System.out.println("  (4) New customer");
+        System.out.println("  (5) Show Registry");
         System.out.println("  (0) Exit");
         System.out.print("Please select an option: ");
     }
@@ -81,11 +82,11 @@ public class ui {
 
     public static int readOption(Scanner in) {
         
-        // Check if 0 <= input <= 4
+        // Check if 0 <= input <= 5
         while (true) {
             int n = readInt(in);
-            if (n >= 0 && n <= 4) return n;
-            System.out.print("Valid options are 0-4. Try again: ");
+            if (n >= 0 && n <= 5) return n;
+            System.out.print("Valid options are 0-5. Try again: ");
         }
     }
 
@@ -121,6 +122,7 @@ public class ui {
         if (option == 2) return "mobile";
         if (option == 3) return "fusion";
         if (option == 4) return "new";
+        if (option == 5) return "registry";
         return "";
     }
 
