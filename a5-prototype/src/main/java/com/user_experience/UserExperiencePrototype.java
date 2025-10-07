@@ -50,7 +50,7 @@ public abstract class UserExperiencePrototype implements Cloneable{
     public void showBanners(){
         System.out.println("===BANNERS===");
         if(banners != null && !banners.isEmpty()) {
-            for (int i = 0, i < banners.size(), i++){
+            for (int i = 0; i < banners.size(); i++){
                 System.out.println((i+1) + ". " + banners.get(i));
             }
         }else{System.out.println("No banners available.");}

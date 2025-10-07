@@ -32,7 +32,7 @@ public class MobileExperience extends UserExperiencePrototype{
         return defaultOffers;
     }
 
-    public void List getDefaultBanners(){
+    public static List<String> getDefaultBanners(){
         List<String> defaultBanners = new ArrayList<>();
         defaultBanners.add("-- MOBILE EXPERIENCE --");
         return defaultBanners;

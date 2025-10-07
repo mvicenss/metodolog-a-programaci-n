@@ -56,12 +56,12 @@ public class Main {
                 Arrays.asList("Welcome banner")
         );
 
-
-        Map<String, UserExperiencePrototype> prototypes = new HashMap<>();
-        prototypes.put("fiber", fiberProto);
-        prototypes.put("mobile", mobileProto);
-        prototypes.put("fusion", fusionProto);
-        prototypes.put("new", newUserProto);
+     
+        PrototypeRegistry registry = new PrototypeRegistry();
+            registry.addPrototype("fiber", fiberProto);
+            registry.addPrototype("mobile", mobileProto);
+            registry.addPrototype("fusion", fusionProto);
+            registry.addPrototype("new", newUserProto);
 
         long t1 = System.nanoTime();
         ui.showTime("Prototype creation took", (t1 - t0) / 1_000_000);
@@ -69,9 +69,10 @@ public class Main {
 
         // Demonstration of cloning and customization
         long d0 = System.nanoTime();
-        UserExperiencePrototype quickA = ui.cloneFrom(prototypes, "fiber");
+        UserExperiencePrototype quickA = registry.getClone("fiber");
         ui.customize(quickA, "John Smith", Arrays.asList("+10 GB free"), Collections.emptyList());
-        UserExperiencePrototype quickB = ui.cloneFrom(prototypes, "fusion");
+        
+        UserExperiencePrototype quickB = registry.getClone("fusion");
         ui.customize(quickB, "Maria Gomez", Collections.emptyList(), Arrays.asList("Autumn cross-discount"));
         long d1 = System.nanoTime();
         ui.showTime("Cloning + customization (demo) took", (d1 - d0) / 1_000_000);
@@ -102,7 +103,7 @@ public class Main {
             List<String> extraBanners = ui.askList(in, "Banners");
 
             long c0 = System.nanoTime();
-            UserExperiencePrototype clone = ui.cloneFrom(prototypes, key);
+            UserExperiencePrototype clone = registry.getClone(key);
             if (clone == null) {
                 System.out.println("Clone failed.");
                 continue;

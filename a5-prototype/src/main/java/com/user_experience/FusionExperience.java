@@ -37,7 +37,7 @@ public class FusionExperience extends UserExperiencePrototype {
         return defaultOffers;
     }
 
-    public static List getDefaultBanners(){
+    public static List<String> getDefaultBanners(){
         List<String> defaultBanners = new ArrayList<>();
         defaultBanners.add("-- FUSION EXPERIENCE --");
         return defaultBanners;

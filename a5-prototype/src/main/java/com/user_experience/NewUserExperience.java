@@ -34,9 +34,9 @@ public class NewUserExperience extends UserExperiencePrototype{
     }
 
     public static List getDefaultBanners() {
-        List<String> defaulBanners = new ArrayList<>();
+        List<String> defaultBanners = new ArrayList<>();
         defaultBanners.add("-- NEW USER EXPERIENCE --");
-        return defaulBanners;
+        return defaultBanners;
     }
 
     //Setters + Getters

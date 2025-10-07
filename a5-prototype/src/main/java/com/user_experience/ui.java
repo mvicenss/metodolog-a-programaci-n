@@ -124,21 +124,6 @@ public class ui {
         return "";
     }
 
-    public static UserExperiencePrototype cloneFrom(Map<String, UserExperiencePrototype> map, String key) {
-        
-        // Find a prototype by key and clone it
-        // If it is null it will return an error
-        UserExperiencePrototype proto = map.get(key);
-        
-        if (proto == null) return null;
-        
-        try {
-            return (UserExperiencePrototype) proto.clone();
-        } catch (CloneNotSupportedException e) {
-            return null;
-        }
-    }
-
     public static void customize(UserExperiencePrototype exp, String username, List<String> offers, List<String> banners) {
         
         // Apply custom values to the cloned experience (object mutation)
