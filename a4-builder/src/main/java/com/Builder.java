@@ -9,4 +9,5 @@ public interface Builder{
     void buildHardDriveCapacity(int  hardDriveCapacity);
     void buildScreenDimensions(int screenDimensions);
     void buildScreenQuality(String screenQuality);
+    Computer getResult(); //Method to finalize building the objetc
 }

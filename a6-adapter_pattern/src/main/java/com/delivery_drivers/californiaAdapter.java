@@ -1,40 +1,21 @@
-package com.delivery_drivers;
+package src.main.java.com.delivery_drivers;
 
-public class californiaAdapter implements avgSpeed {
-    
-    public enum driver {AMERICAN, EUROPEAN}
+public class californiaAdapter extends avgSpeed{
+    private final double constantKmMile = 1.60934;
+    public californiaSpeed americanAdapter;
 
-    public static final double KM_per_MILE = 1.60934;
-    public static final double hoursEU = 7.5;
-    public static final double hoursUS = 8.0;
 
-    private final californiaSpeed cali;
-    private final double shiftLength;
-
-    public californiaAdapter(driver contractType) {
-        this.cali = new californiaSpeed();
-        if (driverType == driver.AMERICAN){
-            this.shiftHours = hoursUS;
-        } else {
-            this.shiftHours = hoursEU;
-        }
+    public californiaAdapter(californiaSpeed americanAdapter){
+        this.americanAdapter = americanAdapter; //CONSTRUCTOR == We initialize the variable as one from the californiaSpeed class
+    }
+    @Override
+    public double setAvgSpeed(double speedKmh){
+        double speedMph = speedKmh / constantKmMile; //converting speed
+        return americanAdapter.setAvgSpeedMph(speedMph); //delegating designation of speed to the cali speed class (where operations with miles happen)
     }
 
     @Override
-    public void setAvgSpeed(double kmh) {
-        if (kmh < 0){
-            kmh = 0;
-        }
-
-        double mph = kmh / KM_per_MILE;
-
-        cali.setAvgMPH(mph);
+    public double calculateDistance(double hours){
+        return americanAdapter.calculateDistance(hours); //Delegating distance calculation to where Miles calculations happen
     }
-
-    @Override
-    public double calculateMaxDistanceKM() {
-        double miles = cali.distanceHours(this.shiftHours);
-        return miles * KM_per_MILE;
-    }
-
 }
