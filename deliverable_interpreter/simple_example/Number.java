@@ -1,6 +1,8 @@
 package simple_example;
 
 //Class for terminal numbers + Terminal Nodes on an AST
+
+//Terminal Expression
 class Number extends ASTNode{
 
     int value; //the value of each terminal instance is saved here
