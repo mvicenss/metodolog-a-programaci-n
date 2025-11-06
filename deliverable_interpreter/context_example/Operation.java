@@ -14,7 +14,7 @@ public class Operation extends ASTNode{
 }
 
 @Override
-public double interpret(Context context) { // Acepta el contexto
+public double interpret(Context context) {
 
     //Recursive call
     //How does it differenciate if its a number, variable or operation? --
