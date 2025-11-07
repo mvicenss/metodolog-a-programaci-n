@@ -1,5 +1,5 @@
 package src.main.java.com.v1;
 
-abstract class TextRender {
-    abstract void renderText(String text);
+public abstract class TextRender {
+    public abstract void renderText(String text);
 }

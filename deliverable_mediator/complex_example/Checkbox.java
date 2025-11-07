@@ -11,7 +11,7 @@ public class Checkbox extends Component{
     //Simulating user clicking
     public void setChecked(boolean isChecked){
 
-        System.out.println("Checkbox (" + id + ") state changed to: " + checked);
+        System.out.println("Checkbox (" + id + ") state changed to: " + isChecked);
         this.isChecked = isChecked;
         mediator.notify(this, "stateChanged");
 
